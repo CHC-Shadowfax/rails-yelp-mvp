@@ -21,10 +21,10 @@ CATEGORIES = %w(chinese italian japanese french belgian)
   )
   2.times do
     p "creating reviews"
-    review = Review.create!(
+    review = Review.create!( # el bang ayuda a mostrar el error
       content: Faker::Restaurant.review,
       rating: rand(0..5),
-      restaurant_id: restaurant.id
+      restaurant_id: restaurant.id # debe tener el id expresamente indicado
     )
     puts "Restaurant with id: #{review.id} - has been created!"
   end
