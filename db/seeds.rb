@@ -19,6 +19,16 @@ CATEGORIES = %w(chinese italian japanese french belgian)
     phone_number: Faker::PhoneNumber.phone_number,
     category: CATEGORIES.sample
   )
+  2.times do
+    p "creating reviews"
+    review = Review.create!(
+      content: Faker::Restaurant.review,
+      rating: rand(0..5),
+      restaurant_id: restaurant.id
+    )
+    puts "Restaurant with id: #{review.id} - has been created!"
+  end
+
   puts "Restaurant with id: #{restaurant.id} - #{restaurant.name} has been created!"
 end
 
