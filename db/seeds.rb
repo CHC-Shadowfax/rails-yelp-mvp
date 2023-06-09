@@ -10,6 +10,8 @@ Restaurant.destroy_all
 
 puts "Creating restaurants"
 
+CATEGORIES = %w(chinese italian japanese french belgian)
+
 25.times do
   restaurant = Restaurant.create(
     name: Faker::Restaurant.name,
